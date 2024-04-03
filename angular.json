@@ -3,11 +3,35 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "My-Website": {
+    "first-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "less"
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "style": "scss",
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "",
@@ -17,27 +41,15 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/my-website",
+            "outputPath": "dist/first-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "less",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.less"
-            ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "inlineStyleLanguage": "scss",
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.css"],
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -67,10 +79,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "My-Website:build:production"
+              "buildTarget": "first-app:build:production"
             },
             "development": {
-              "buildTarget": "My-Website:build:development"
+              "buildTarget": "first-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -78,26 +90,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "My-Website:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "inlineStyleLanguage": "less",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.less"
-            ],
-            "scripts": []
+            "buildTarget": "first-app:build"
           }
         }
       }
