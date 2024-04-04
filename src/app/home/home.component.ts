@@ -23,9 +23,9 @@ export class HomeComponent {
   readonly baseUrl = 'https://angular.dev/assets/tutorials/common';
   housingLocation: HousingLocation = {
     id: 9999,
-    name: 'Test Home',
-    city: 'Test city',
-    state: 'ST',
+    name: 'Castle',
+    city: 'Castle rock',
+    state: 'CO',
     photo: `${this.baseUrl}/example-house.jpg`,
     availableUnits: 99,
     wifi: true,
