@@ -4,7 +4,13 @@ import { Component } from '@angular/core';
   selector: 'app-links',
   standalone: true,
   imports: [],
-  templateUrl: './links.component.html',
+  template: '
+    <section class="links">
+      <img class="linkPhoto"
+      [src]="links.photo"
+      alt="link to {{ links.name }}">
+  '
+  /*templateUrl: './links.component.html',*/
   styleUrl: './links.component.less'
 })
 export class LinksComponent {
